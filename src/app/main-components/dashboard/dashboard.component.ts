@@ -1,5 +1,5 @@
-import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
+import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 
 @Component({
   selector: 'app-dashboard',
@@ -29,26 +29,26 @@ export class DashboardComponent implements OnInit {
   }
 
   initializePanorama(): void {
-    const panorama = new (window as any).PANOLENS.ImagePanorama('/assets/images/panel1.jpeg');
-    const panorama2 = new (window as any).PANOLENS.ImagePanorama('/assets/images/pano5.jpg');
+    const panorama = new (window as any).PANOLENS.ImagePanorama('/assets/images/WhatsApp Image 2024-06-20 at 13.37.53_29a6d9b8.jpg');
+    // const panorama2 = new (window as any).PANOLENS.ImagePanorama('/assets/images/pano5.jpg');
 
     const imageContainer = document.querySelector('.image-container');
 
-    const spotButton = [
-      new (window as any).THREE.Vector3(-2136.06, 16.30, 890.14),
-      new (window as any).THREE.Vector3(-2136.06, 296.30, -4290.14)
-    ];
+    // const spotButton = [
+    //   new (window as any).THREE.Vector3(-2136.06, 16.30, 890.14),
+    //   new (window as any).THREE.Vector3(-2136.06, 296.30, -4290.14)
+    // ];
 
     const viewer = new (window as any).PANOLENS.Viewer({
       container: imageContainer,
       autoRotate: true,
       autoRotateSpeed: 0.3,
-      controlBar: true,
+      controlBar: false,
     });
 
-    panorama.link(panorama2, spotButton[0]);
-    panorama2.link(panorama, spotButton[1]);
+    // panorama.link(panorama2, spotButton[0]);
+    // panorama2.link(panorama, spotButton[1]);
 
-    viewer.add(panorama, panorama2);
+    viewer.add(panorama);
   }
 }
