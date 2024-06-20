@@ -68,7 +68,7 @@ export class TourComponent implements OnInit{
 
     const viewer = new (window as any).PANOLENS.Viewer({
       container: imageContainer,
-      autoRotate: false,
+      autoRotate: true,
       autoRotateSpeed: 0.3,
       controlBar: true,
     });
